@@ -1,10 +1,12 @@
 import React from "react";
 
-import Header from '../common/template/header'
+import Header from "../common/template/header";
+import SideBar from "../common/template/sideBar";
 
-import '../common/template/dependencies'
+import "../common/template/dependencies";
+
 export default (props) => {
   <div className="wrapper">
-    <Header/>
+    <Header />
   </div>;
 };
