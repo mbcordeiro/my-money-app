@@ -9,7 +9,11 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state, selected: action.payload
             }
-            default:
-                return state
+            case 'TAB_SHOWED':
+                return {
+                    ...state, visible: action.payload
+                }
+                default:
+                    return state
     }
 }
