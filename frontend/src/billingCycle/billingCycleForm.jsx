@@ -15,6 +15,7 @@ class BillingCycleForm extends Component {
           <Field
             name="name"
             component={LabelAndInput}
+            readOnly={readOnly}
             label="Nome"
             cols="12 4"
             placeholder="Informe o nome"
@@ -22,6 +23,7 @@ class BillingCycleForm extends Component {
           <Field
             name="month"
             component={LabelAndInput}
+            readOnly={readOnly}
             type="number"
             label="Mês"
             cols="12 4"
@@ -30,6 +32,7 @@ class BillingCycleForm extends Component {
           <Field
             name="year"
             component={LabelAndInput}
+            readOnly={readOnly}
             type="number"
             label="Ano"
             cols="12 4"
