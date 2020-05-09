@@ -10,6 +10,7 @@ import {
     showTabs,
     selectTab
 } from '../common/tab/tabActions'
+import billingCycle from './billingCycle'
 
 const BASE_URL = 'http://localhost:3003/api'
 
@@ -41,7 +42,8 @@ export function getList() {
     export function showUpdate(values) {
         return [
             showTabs('tabUpdate'),
-            selectTab('tabUpdate')
+            selectTab('tabUpdate'),
+            initialize('billingCyclesForm', billingCycle)
         ]
     }
 }
