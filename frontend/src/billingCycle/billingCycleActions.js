@@ -37,4 +37,11 @@ export function getList() {
                 })
         }
     }
+
+    export function showUpdate(values) {
+        return [
+            showTabs('tabUpdate'),
+            selectTab('tabUpdate')
+        ]
+    }
 }
