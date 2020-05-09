@@ -1,15 +1,31 @@
 import React, { Component } from "react";
-import Grid from "../common/layout/grid";
 import { Field } from "redux-form";
+
+import Grid from "../common/layout/grid";
+import Input from "../common/form/input";
 
 class ItemList extends Component {
   renderRows() {
-    return(
+    return (
       <tr>
-        <td><Field name='credits[0].name' component='input'></Field></td>
-        <td><Field name='credits[1].name' component='input'></Field></td>   
+        <td>
+          <Field
+            name="credits[0].name"
+            component={Input}
+            placeholder="Informe o valor"
+            readOnly={this.props.readOnly}
+          ></Field>
+        </td>
+        <td>
+          <Field
+            name="credits[0].value"
+            component={Input}
+            placeholder="Informe o valor"
+            readOnly={this.props.readOnly}
+          ></Field>
+        </td>
       </tr>
-    )
+    );
   }
 
   render() {
