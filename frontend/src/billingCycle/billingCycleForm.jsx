@@ -9,7 +9,7 @@ import ItemList from "./itemList";
 
 class BillingCycleForm extends Component {
   render() {
-    const { handleSubmit, readOnly, credits } = this.props;
+    const { handleSubmit, readOnly, credits, debts } = this.props;
     return (
       <form role="form" onSubmit={handleSubmit}>
         <div className="box-body">
@@ -41,10 +41,11 @@ class BillingCycleForm extends Component {
           />
           <ItemList
             cols="12 6"
-            list={credits}
+            list={debts}
             readOnly={readOnly}
-            field="credits"
-            legend="Créditos"
+            field="debts"
+            legend="Débitos"
+            showStatus={true}
           />
         </div>
         <div className="box-footer">
@@ -72,5 +73,6 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({ init }, dispatch);
 const selector = formValueSelector("billingCycleForm");
 const mapStateToProps = (state) => ({
   credits: selector(state, "credits"),
+  debts: selector(state, "debts"),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(BillingCycleForm);
