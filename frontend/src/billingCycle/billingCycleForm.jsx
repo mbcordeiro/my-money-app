@@ -39,7 +39,13 @@ class BillingCycleForm extends Component {
             cols="12 4"
             placeholder="Informe o ano"
           />
-          <ItemList cols="12 6" list={credits} readOnly={readOnly} />
+          <ItemList
+            cols="12 6"
+            list={credits}
+            readOnly={readOnly}
+            field="credits"
+            legend="Créditos"
+          />
         </div>
         <div className="box-footer">
           <button type="submit" className={`btn btn-${this.props.submitClass}`}>

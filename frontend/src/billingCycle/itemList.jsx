@@ -9,13 +9,13 @@ import Input from "../common/form/input";
 class ItemList extends Component {
   add(index, item = {}) {
     if (!this.props.readOnly) {
-      this.props.arrayInsert("billingCycleForm", "credits", index, item);
+      this.props.arrayInsert("billingCycleForm", this.props.field, index, item);
     }
   }
 
   remove(index) {
     if (!this.props.readOnly && this.props.list.length > 1) {
-      this.props.arrayRemove("billingCycleForm", 'credits', index);
+      this.props.arrayRemove("billingCycleForm", this.props.field, index);
     }
   }
 
@@ -33,7 +33,7 @@ class ItemList extends Component {
         </td>
         <td>
           <Field
-            name={`credits[${index}}.value`}
+            name={`${this.props.field}[${index}].name`}
             component={Input}
             placeholder="Informe o valor"
             readOnly={this.props.readOnly}
@@ -70,7 +70,7 @@ class ItemList extends Component {
     return (
       <Grid cols={this.props.cols}>
         <fieldset>
-          <legend>Créditos</legend>{" "}
+          <legend>{this.props.legend} </legend>
           <table className="table">
             <thead>
               <tr>
