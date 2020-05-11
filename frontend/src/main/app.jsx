@@ -5,8 +5,6 @@ import SideBar from "../common/template/sideBar";
 import Footer from "../common/template/footer";
 import Messages from "../common/msg/messages";
 
-import "../common/template/dependencies";
-
 export default (props) => {
   <div className="wrapper">
     <Header />
